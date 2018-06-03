@@ -212,5 +212,7 @@ def fabu(url):
     # 返回文章ID
     # post.id = wp.call(posts.NewPost(post))
     # print(str(base_url) + '/?p=' + str(post.id))
+    # print('\n')
 
 fabu('https://traveldetail.fliggy.com/item.htm?spm=181.7621407.a1z9b.6.77ca1e3a1fi35e&id=546636958919&scm=20140635.1_1_2.0.0b83e0e715280164660381559e1a9b')
+fabu('https://traveldetail.fliggy.com/item.htm?spm=a1z10.1-b.w4004-4891720451.4.2b8d2665MgXY3M&id=37258139518')
