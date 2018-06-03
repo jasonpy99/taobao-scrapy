@@ -69,16 +69,25 @@ def fabu(url):
     for i in yuanjia_list:
         yuanjia = str(yuanjia) + str(i)
     print(yuanjia)
+    post.custom_fields.append({
+        'key':'yuanjia',
+        'value':yuanjia
+    })
 
     # 现价
-    xianjia_list = html.xpath('//div[@class="item-price"]/div[@class="price-items"]/dl[@class="price-dl"]/dd[@class="price-content"][2]//text()')
+    xianjia_list = html.xpath('//div[@class="item-price"]/div[@class="price-items"]/dl[@class="price-dl"]/dd[@class="price-content"]/span//text()')
     xianjia = ''
     for i in xianjia_list:
         xianjia = str(xianjia)+str(i)
     print(xianjia)
+    post.custom_fields.append({
+        'key':'xianjia',
+        'value':xianjia
+    })
 
     # 返回文章ID
-    # post.id = wp.call(posts.NewPost(post))
+    # post.id = wp.call(posts.EditPost(5, post))
+
     # print(str(base_url) + '/?p=' + str(post.id))
 
 fabu('https://traveldetail.fliggy.com/item.htm?spm=181.7621407.a1z9b.6.77ca1e3a1fi35e&id=546636958919&scm=20140635.1_1_2.0.0b83e0e715280164660381559e1a9b')
