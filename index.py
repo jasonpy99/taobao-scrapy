@@ -2,7 +2,6 @@ from selenium import webdriver
 from requests_html import HTML
 import time
 from wordpress_xmlrpc import Client, WordPressPost
-from wordpress_xmlrpc.methods import posts
 import re
 
 base_url = 'http://127.0.0.1'
@@ -207,8 +206,6 @@ def fabu(url):
             'key':'st5',
             'value':st5
         })
-
-
 
     # 返回文章ID
     # post.id = wp.call(posts.NewPost(post))
