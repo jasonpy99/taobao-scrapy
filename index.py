@@ -51,18 +51,14 @@ def fabu(url):
     post.title = title
 
     # 获取类型（跟团游，飞猪专线）
-    type_list = html.find('.title-txt>.title-tag')
-    type = ''
-    for i in type_list:
-        type = str(i.text) + ','
-    type = re.sub(',$', '', type)
+    type_list = html.xpath('//h1[@class="title-txt"]//span[@class="title-tag"]/text()')
     post.custom_fields.append({
         'key': 'type',
-        'value': type
+        'value': str(type_list)
     })
 
     # 获取首图 1
-    st_list = html.find('ul.item-gallery-bottom>li>img')
+    st_list = html.find('//h1[@class="title-txt"]//span[@class="title-tag"]')
     st1 = st_list[0].attrs['src']
     st1 = re.sub('_64x64.jpg', '', st1)
     st1 = 'https:' + str(st1)
