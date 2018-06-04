@@ -22,7 +22,7 @@ post.terms_names = {
 
 def downhtml(url):
     browser = webdriver.Chrome()
-    browser.minimize_window()
+    browser.maximize_window()
     browser.get(url)
     time.sleep(10) #等待10秒加载js
     html = HTML(html=browser.page_source) # 返回的 page_source 转换成 requests-html 支持的格式
